@@ -35,4 +35,8 @@ public class LocalService {
         }
     }
 
+    public List<Local> findByRedevableRef(String ref) {
+        return localDao.findByRedevableRef(ref);
+    }
+
 }
