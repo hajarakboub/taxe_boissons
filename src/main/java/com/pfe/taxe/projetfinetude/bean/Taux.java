@@ -13,7 +13,7 @@ public class Taux {
     @OneToOne
     private CategorieLocal Categorie;
 
-    private int pourcentage;
+    private double pourcentage;
 
     public Long getId() {
         return id;
@@ -31,7 +31,7 @@ public class Taux {
         Categorie = categorie;
     }
 
-    public int getPourcentage() {
+    public double getPourcentage() {
         return pourcentage;
     }
 
