@@ -17,22 +17,22 @@ public class RedevableWs {
     @Autowired
     private RedevableService redevableService;
 
-    @GetMapping("boisson/redovable/findbyref")
+    @GetMapping("/ref/{ref}")
     public Redevable findByRef(String ref) {
         return redevableService.findByRef(ref);
     }
 
-    @GetMapping("boisson/redovable/findbytype")
+    @GetMapping("/type/{type}")
     public List<Redevable> findByType(String type) {
         return redevableService.findByType(type);
     }
 
-    @GetMapping("boisson/redovable/findbyall")
+    @GetMapping("/")
     public List<Redevable> findAll() {
         return redevableService.findAll();
     }
 
-    @PostMapping("boisson/redovable/saveredevable")
+    @PostMapping("/red/{red}")
     public int save(Redevable red) {
         return redevableService.save(red);
     }
