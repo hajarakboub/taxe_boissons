@@ -12,7 +12,6 @@ public class RedevableService {
     @Autowired
     private RedevableDao redevableDao;
 
-
     public Redevable findByRef(String ref) {
         return redevableDao.findByRef(ref);
     }
@@ -24,6 +23,16 @@ public class RedevableService {
     public List<Redevable> findAll() {
         return redevableDao.findAll();
     }
+
+    public int save(Redevable red) {
+        if(findByRef(red.getRef())!= null){
+            return -1;
+        } else {
+            redevableDao.save(red);
+            return 1;
+        }
+    }
+
 
 
 
