@@ -34,7 +34,7 @@ public class LocalWs {
         return localService.save(loc);
     }
 
-    @GetMapping("/ref/{ref}")
+    @GetMapping("/redevable/ref/{ref}")
     public List<Local> findByRedevableRef(@PathVariable String ref) {
         return localService.findByRedevableRef(ref);
     }
