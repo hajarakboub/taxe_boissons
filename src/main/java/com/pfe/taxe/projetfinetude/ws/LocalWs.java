@@ -21,7 +21,7 @@ public class LocalWs {
     }
 
     @GetMapping("/adresse/{adresse}")
-    public List<Local> findByAdresseLike(String adresse) {
+    public List<Local> findByAdresseLike(@PathVariable String adresse) {
         return localService.findByAdresseLike(adresse);
     }
 
@@ -30,13 +30,13 @@ public class LocalWs {
         return localService.findAll();
     }
 
-    @PostMapping("/loc/{loc}")
-    public int save(Local loc) {
+    @PostMapping("/")
+    public int save(@RequestBody Local loc) {
         return localService.save(loc);
     }
 
     @GetMapping("/redref/{redref}")
-    public List<Local> findByRedevableRef(String ref) {
+    public List<Local> findByRedevableRef(@PathVariable String ref) {
         return localService.findByRedevableRef(ref);
     }
 }
