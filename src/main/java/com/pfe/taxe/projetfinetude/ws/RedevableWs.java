@@ -3,27 +3,24 @@ package com.pfe.taxe.projetfinetude.ws;
 import com.pfe.taxe.projetfinetude.bean.Redevable;
 import com.pfe.taxe.projetfinetude.service.RedevableService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("boisson/redovable")
+@RequestMapping("boisson/redevable")
 public class RedevableWs {
 
     @Autowired
     private RedevableService redevableService;
 
     @GetMapping("/ref/{ref}")
-    public Redevable findByRef(String ref) {
+    public Redevable findByRef(@PathVariable String ref) {
         return redevableService.findByRef(ref);
     }
 
     @GetMapping("/type/{type}")
-    public List<Redevable> findByType(String type) {
+    public List<Redevable> findByType(@PathVariable String type) {
         return redevableService.findByType(type);
     }
 
@@ -32,8 +29,8 @@ public class RedevableWs {
         return redevableService.findAll();
     }
 
-    @PostMapping("/red/{red}")
-    public int save(Redevable red) {
+    @PostMapping("/")
+    public int save(@RequestBody Redevable red) {
         return redevableService.save(red);
     }
 }
