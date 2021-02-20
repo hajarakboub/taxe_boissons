@@ -3,7 +3,6 @@ package com.pfe.taxe.projetfinetude.ws;
 
 import com.pfe.taxe.projetfinetude.bean.Local;
 import com.pfe.taxe.projetfinetude.service.LocalService;
-import com.pfe.taxe.projetfinetude.service.RedevableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +34,7 @@ public class LocalWs {
         return localService.save(loc);
     }
 
-    @GetMapping("/redref/{redref}")
+    @GetMapping("/ref/{ref}")
     public List<Local> findByRedevableRef(@PathVariable String ref) {
         return localService.findByRedevableRef(ref);
     }
