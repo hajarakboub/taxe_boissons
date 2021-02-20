@@ -10,4 +10,5 @@ import java.util.List;
 public interface LocalDao extends JpaRepository<Local,Long> {
         Local findByRef(String ref);
         List<Local> findByAdresseLike(String adresse);
+        List<Local> findByRedevableRef(String ref);
 }
