@@ -9,11 +9,30 @@ public class TaxeBoisson {
     private Long id;
     @ManyToOne
     private Redevable redevable;
+    @ManyToOne
+    private Local local;
     private Integer trimestre;
     private Integer annee;
     private Double benefice;
+    private  Double montantBase;
     @ManyToOne
     private Taux taux;
+
+    public Local getLocal() {
+        return local;
+    }
+
+    public void setLocal(Local local) {
+        this.local = local;
+    }
+
+    public Double getMontantBase() {
+        return montantBase;
+    }
+
+    public void setMontantBase(Double montantBase) {
+        this.montantBase = montantBase;
+    }
 
     public Long getId() {
         return id;
