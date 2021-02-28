@@ -11,7 +11,7 @@ public class Taux {
     private Long id;
 
     @OneToOne
-    private CategorieLocal Categorie;
+    private CategorieLocal categorieLocal;
 
     private double pourcentage;
 
@@ -23,12 +23,16 @@ public class Taux {
         this.id = id;
     }
 
-    public CategorieLocal getCategorie() {
-        return Categorie;
+    public CategorieLocal getCategorieLocal() {
+        return categorieLocal;
     }
 
-    public void setCategorie(CategorieLocal categorie) {
-        Categorie = categorie;
+    public void setCategorieLocal(CategorieLocal categorieLocal) {
+        this.categorieLocal = categorieLocal;
+    }
+
+    public void setPourcentage(double pourcentage) {
+        this.pourcentage = pourcentage;
     }
 
     public double getPourcentage() {

@@ -13,6 +13,16 @@ public class Local {
     private String adresse;
     @ManyToOne
     private Redevable redevable;
+    @ManyToOne
+    private CategorieLocal categorieLocal;
+
+    public CategorieLocal getCategorieLocal() {
+        return categorieLocal;
+    }
+
+    public void setCategorieLocal(CategorieLocal categorieLocal) {
+        this.categorieLocal = categorieLocal;
+    }
 
     public Long getId() {
         return id;
