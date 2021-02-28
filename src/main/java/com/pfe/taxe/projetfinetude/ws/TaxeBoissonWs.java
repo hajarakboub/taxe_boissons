@@ -20,8 +20,13 @@ public class TaxeBoissonWs{
         return taxeBoissonService.findByRedevableRef(ref);
     }
     @PostMapping("/")
-    public int save(TaxeBoisson tb) {
+    public int save(@RequestBody TaxeBoisson tb) {
         return taxeBoissonService.save(tb);
+    }
+
+    @GetMapping ("/simuler")
+    public int simuler(@RequestBody TaxeBoisson taxeBoisson) {
+        return taxeBoissonService.simuler(taxeBoisson);
     }
 
     @Autowired
