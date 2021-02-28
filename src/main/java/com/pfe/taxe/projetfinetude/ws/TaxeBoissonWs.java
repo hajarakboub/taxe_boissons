@@ -19,6 +19,11 @@ public class TaxeBoissonWs{
     public List<TaxeBoisson> findByRedevableRef(@PathVariable String ref){
         return taxeBoissonService.findByRedevableRef(ref);
     }
+    @PostMapping("/")
+    public int save(TaxeBoisson tb) {
+        return taxeBoissonService.save(tb);
+    }
+
     @Autowired
     private TaxeBoissonService taxeBoissonService;
 }

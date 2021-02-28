@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface TaxeBoissonDao extends JpaRepository<TaxeBoisson,Long> {
     List<TaxeBoisson> findByRedevableRef(String ref);
+    TaxeBoisson findByLocalRefAndTrimestreAndAndAnnee(String ref,Integer trimestre,Integer annee);
 }
